@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:local="clr-namespace:Vinteler_Erica_lab10"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Vinteler_Erica_lab10.ListPage">
-    <ContentPage.Content xmlns:local="clr-namespace:PersonalAgenda">
+    <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
@@ -12,9 +13,9 @@
     <StackLayout Margin="20">
         <Editor Placeholder="Enter the description of the shopping list" Text="{Binding Description}" HeightRequest="100">
             <Editor.Behaviors>
-                <local:ValidationBehaviour />
+                <local:ValidationBehaviour/>
             </Editor.Behaviors>
-        </Editor>/>
+        </Editor>
         <Button Text="Add/Choose Item to buy" Clicked="OnChooseButtonClicked"/>
         <Grid>
             <Grid.ColumnDefinitions>
