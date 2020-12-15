@@ -14,6 +14,8 @@ namespace Vinteler_Erica_lab10.Data
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<ShopList>().Wait();
+            _database.CreateTableAsync<Product>().Wait();
+            _database.CreateTableAsync<ListProduct>().Wait();
         }
         public Task<List<ShopList>> GetShopListsAsync()
         {
@@ -40,5 +42,25 @@ namespace Vinteler_Erica_lab10.Data
         {
             return _database.DeleteAsync(slist);
         }
+        public Task<int> SaveProductAsync(Product product)
+        {
+            if (product.ID != 0)
+            {
+                return _database.UpdateAsync(product);
+            }
+            else
+            {
+                return _database.InsertAsync(product);
+            }
+        }
+        public Task<int> DeleteProductAsync(Product product)
+        {
+            return _database.DeleteAsync(product);
+        }
+        public Task<List<Product>> GetProductsAsync()
+        {
+            return _database.Table<Product>().ToListAsync();
+        }
+
     }
 }

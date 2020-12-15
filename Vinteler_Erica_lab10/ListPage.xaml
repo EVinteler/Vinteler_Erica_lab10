@@ -11,6 +11,7 @@
     </ContentPage.Content>
     <StackLayout Margin="20">
         <Editor Placeholder="Enter the description of the shopping list" Text="{Binding Description}" HeightRequest="100" />
+        <Button Text="Add/Choose Item to buy" Clicked="OnChooseButtonClicked"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -18,6 +19,7 @@
             </Grid.ColumnDefinitions>
             <Button Text="Save" Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+        
         </Grid>
     </StackLayout>
 </ContentPage>
